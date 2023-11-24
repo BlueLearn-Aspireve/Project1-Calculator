@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="./assets/icon-logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="navbar">
+      <img
+        src="assets/icon-logo.png"
+        alt="Calculator Logo"
+        height="200px"
+        width="200px"
+      />
+      <h3 class="navbar-option selected-option">Calculator</h3>
+    </div>
+    <div class="history">
+      <div class="history-title">Your History</div>
+      <div class="history-calculations" id="history-calculations">
+        <div class="operation">
+          <div class="operation-numbers">750 + 600</div>
+          <div class="operation-values">1350</div>
+        </div>
+      </div>
+    </div>
+    <div class="calculator-pad">
+      <div class="calculator-title">Calculator</div>
+      <div class="calculator-operations">
+        <input
+          class="calculator-input"
+          id="calculator-input"
+          value=""
+          autofocus
+          oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        />
+      </div>
+      <div class="buttons">
+        <button class="numButton" value="1">1</button>
+        <button class="numButton" value="2">2</button>
+        <button class="numButton" value="3">3</button>
+        <button class="opButton" value="+">+</button>
+        <button class="numButton" value="4">4</button>
+        <button class="numButton" value="5">5</button>
+        <button class="numButton" value="6">6</button>
+        <button class="opButton" value="-">-</button>
+        <button class="numButton" value="7">7</button>
+        <button class="numButton" value="8">8</button>
+        <button class="numButton" value="9">9</button>
+        <button class="opButton" value="*">*</button>
+        <button class="clearButton" id="clearButton">C</button>
+        <button class="numButton" value="0">0</button>
+        <button class="opButton" value="/">/</button>
+        <button class="eqButton" id="eqButton">=</button>
+      </div>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>

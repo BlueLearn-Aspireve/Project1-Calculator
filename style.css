@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+:root {
+    --background-black: #000000;
+    --text-bold-color: #FFFFFF;
+    --text-default-color: #838383;
+    --navbar-selected-color: #ff513c;
+    --border-color: #838383ad;
+    --title-font: 'Montserrat', sans-serif;
+    --text-font: 'Roboto', sans-serif;
+    --slider-color: #838383ad;
+    --slider-track-color: #83838344;
+    --button-hover-color: #83838344;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-black);
+    color: var(--text-default-color);
+    display: flex;
+}
+
+.navbar {
+    min-width: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-right: 2px solid var(--border-color);
+}
+
+.navbar img {
+    display: block;
+    height: 3rem;
+    width: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.navbar-option,
+.selected-option {
+    color: inherit;
+    rotate: 270deg;
+    transform-origin: initial;
+    margin-top: 2rem;
+    font-family: var(--title-font);
+    font-weight: 400;
+}
+
+.selected-option {
+    color: var(--navbar-selected-color);
+    font-weight: 600;
+}
+
+.history {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid var(--border-color);
+}
+
+.history-title,
+.calculator-title {
+    color: var(--text-bold-color);
+    font-family: var(--title-font);
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+    border-bottom: 2px solid var(--border-color);
+    padding: 1rem 0;
+    z-index: 2;
+}
+
+.history-calculations {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0.5rem 1rem;
+    overflow: auto;
+}
+
+.history-calculations::-webkit-scrollbar {
+    width: 5px;
+}
+
+.history-calculations::-webkit-scrollbar-thumb {
+    width: 5px;
+    border-radius: 3px;
+    background-color: var(--slider-color);
+}
+
+.history-calculations::-webkit-scrollbar-track {
+    width: 5px;
+    border-radius: 3px;
+    background-color: var(--slider-track-color);
+}
+
+.operation {
+    text-align: right;
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+    --color-bd: var(--text-default-color);
+}
+
+.operation:first-child {
+    --color-bd: var(--text-bold-color);
+}
+
+.operation-numbers,
+.operation-values {
+    font-family: var(--text-font);
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: var(--color-bd);
+}
+
+.operation-values {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.calculator-pad {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-input {
+    border: none;
+    outline: none;
+    background: rgba(50, 43, 62, 0.395);
+    width: 100%;
+    height: 100%;
+    font-size: 3rem;
+    padding: .5rem;
+    color: var(--text-bold-color);
+    text-align: right;
+}
+
+.calculator-operations {
+    width: 100%;
+    height: 30%;
+    padding: 1rem;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding: 1rem;
+    height: 100%;
+}
+
+.numButton,
+.opButton,
+.clearButton,
+.eqButton {
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    color: var(--text-bold-color);
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.opButton {
+    color: var(--text-default-color);
+}
+
+.clearButton {
+    color: var(--navbar-selected-color);
+}
+
+.numButton:hover,
+.opButton:hover,
+.clearButton:hover {
+    background-color: var(--button-hover-color);
+    transition: all 300ms ease-in-out;
+}
+
+.eqButton {
+    color: var(--text-bold-color);
+    background-color: var(--navbar-selected-color);
+}
+
+@media screen and (max-width: 320px) {
+    .history {
+        display: none;
+    }
+
+    .navbar {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 425px) {
+    .history {
+        display: none;
+    }
+
+    .navbar {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 610px) {
+    .history {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 610px) and (max-width: 768px) {
+    .history {
+        display: none;
+    }
+
+}
